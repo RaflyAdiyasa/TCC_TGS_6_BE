@@ -1,0 +1,13 @@
+# Node.js TODO Backend
+
+## Project Description
+This is a backend application for a TODO management system built with Node.js. It provides APIs to manage tasks, including creating, reading, updating, and deleting TODO items.
+
+## Features
+- Create TODO items
+- Retrieve TODO items
+- Update TODO items
+- Delete TODO items
+- User authentication (optional)
+
+## Project Structure

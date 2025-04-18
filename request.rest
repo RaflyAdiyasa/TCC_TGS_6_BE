@@ -1,29 +1,29 @@
-GET http://localhost:5000/users
+GET https://be-722144796089.us-central1.run.app/users
 
 ###
-GET http://localhost:5000/users/1
+GET https://be-722144796089.us-central1.run.app/users/1
 
 ###
-POST http://localhost:5000/users
+POST https://be-722144796089.us-central1.run.app/users
 Content-Type: application/json
 
 {
     "tag": "Re:Re: Help Me",
     "title": "Suggest",
-    "content": "Look into your hole"
+    "content": "Ditt akuu takuut"
 }
 
 ###
-PATCH http://localhost:5000/users/1
+PATCH https://be-722144796089.us-central1.run.app/users/10
 Content-Type: application/json
 
 {
     "tag": "Re:Re: Help Me",
-    "title": "Suggest",
-    "content": "Look into your hole"
+    "title": "Help",
+    "content": "Ditt tolongin ditt"
 }
 
 ###
-DELETE http://localhost:5000/users/3
+DELETE https://be-722144796089.us-central1.run.app/users/10
 
 
