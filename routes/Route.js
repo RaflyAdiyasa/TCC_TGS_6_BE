@@ -1,12 +1,12 @@
 import express from "express";
-import * as UserController from "../controller/UserController.js";
+import * as NoteController from "../controller/NoteController.js";
 
 const router = express.Router();
 
-router.get('/users', UserController.getUsers);
-router.get('/Users/:id', UserController.getUserById);
-router.post('/Users', UserController.createUser);
-router.patch('/Users/:id', UserController.updateUser);
-router.delete('/Users/:id', UserController.deleteUser);
+router.get('/Note', NoteController.getNotes);
+router.get('/Note/:id', NoteController.getNoteById);
+router.post('/Note', NoteController.createNote);
+router.patch('/Note/:id', NoteController.updateNote);
+router.delete('/Note/:id', NoteController.deleteNote);
 
 export default router;

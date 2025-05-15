@@ -26,4 +26,23 @@ Content-Type: application/json
 ###
 DELETE https://be-722144796089.us-central1.run.app/users/10
 
+###
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "name": "huan", 
+    "email": "huan@hu",
+    "gender": "undifend", 
+    "password": "help"
+}
+
+###
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email": "huan@hu",
+    "password": "help"
+}
 
