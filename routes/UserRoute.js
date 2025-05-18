@@ -7,10 +7,10 @@ const userRouter = express.Router();
 
 userRouter.get("/token", refreshToken);
 userRouter.post("/login", UserController.login);
-userRouter.get("/users", UserController.getUsers);
-userRouter.get("/users/:id", verifyToken, UserController.getUserById);
+// userRouter.get("/users", UserController.getUsers);
+// userRouter.get("/users/:id", verifyToken, UserController.getUserById);
 userRouter.post("/users", UserController.createUser);
-userRouter.put("/users/:id", verifyToken, UserController.updateUser);
-userRouter.delete("/users/:id", verifyToken, UserController.deleteUser);
+// userRouter.put("/users/:id", verifyToken, UserController.updateUser);
+userRouter.delete("/users", UserController.logout);
 
 export default userRouter;

@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import Route from "./routes/Route.js";
 import userRouter from "./routes/UserRoute.js";
+import cookieParser from "cookie-parser";
 
 import db from "./config/Database.js";
 import User from "./model/UserModel.js";
@@ -18,7 +19,8 @@ try {
 }
 
 const app = express();
-app.use(cors());
+app.use(cors({credentials: true, origin: "http://localhost:3000"}));
+app.use(cookieParser());
 app.use(express.json());
 app.use(Route);
 app.use(userRouter);

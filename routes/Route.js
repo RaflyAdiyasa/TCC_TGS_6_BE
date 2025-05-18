@@ -1,12 +1,13 @@
 import express from "express";
 import * as NoteController from "../controller/NoteController.js";
+import { verifyToken } from "../middleware/VerifyToken.js";
 
 const router = express.Router();
 
-router.get('/Note', NoteController.getNotes);
-router.get('/Note/:id', NoteController.getNoteById);
-router.post('/Note', NoteController.createNote);
-router.patch('/Note/:id', NoteController.updateNote);
-router.delete('/Note/:id', NoteController.deleteNote);
+router.get('/Note', verifyToken, NoteController.getNotes);
+router.get('/Note/:id', verifyToken, NoteController.getNoteById);
+router.post('/Note', verifyToken, NoteController.createNote);
+router.patch('/Note/:id', verifyToken, NoteController.updateNote);
+router.delete('/Note/:id', verifyToken, NoteController.deleteNote);
 
 export default router;
