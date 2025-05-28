@@ -32,9 +32,9 @@ Content-Type: application/json
 
 {
     "name": "huan", 
-    "email": "huan@hu",
-    "gender": "undifend", 
-    "password": "help"
+    "email": "huan@huh",
+    "gender": "Laki-laki", 
+    "password": "no"
 }
 
 ###
