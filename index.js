@@ -19,20 +19,15 @@ try {
 }
 
 const app = express();
-const allowedOrigins = [
-  "https://a-07-451003.uc.r.appspot.com"
-];
-
-app.use(cors({
-  origin: (origin, callback) => {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-  credentials: true,
-}));
+const corsOptions = {
+ origin: [
+    "https://notes-fe-106-dot-a-07-451003.uc.r.appspot.com",
+    "http://localhost:3000", 
+  ], 
+  credentials: true, 
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+};
 app.use(cookieParser());
 app.use(express.json());
 app.use(Route);
