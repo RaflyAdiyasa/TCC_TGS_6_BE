@@ -1,5 +1,7 @@
-FROM node:22-alpine
+FROM node:20-alpine
 WORKDIR /app
+COPY package*.json ./
+RUN npm install --production 
 COPY . .
 RUN npm install
 EXPOSE 5000
