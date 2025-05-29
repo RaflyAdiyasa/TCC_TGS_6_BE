@@ -30,16 +30,15 @@ const corsOptions = {
   allowedHeaders: ['Content-Type', 'Authorization'],
 };
 
-// ✅ Apply CORS middleware globally
+
 app.use(cors(corsOptions));
 
-// ✅ Optional: Handle preflight explicitly (not required if app.use(cors(...)) is used)
+
 app.options('*', cors(corsOptions));
 
 app.use(cookieParser());
 app.use(express.json());
 
-// ✅ Register routes AFTER middlewares
 app.use(Route);
 app.use(userRouter);
 
