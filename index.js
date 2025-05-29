@@ -15,21 +15,32 @@ try {
     await Note.sync();
     console.log('Table User and Note Created...');
 } catch (error) {
-    
+    console.error('Database error:', error);
 }
 
 const app = express();
+
 const corsOptions = {
- origin: [
+  origin: [
     'https://notes-fe-106-dot-a-07-451003.uc.r.appspot.com',
-    "http://localhost:3000", 
-  ], 
-  credentials: true, 
+    "http://localhost:3000"
+  ],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
 };
-app.use(cookieParser());
+
+// ✅ Apply CORS middleware globally
+app.use(cors(corsOptions));
+
+// ✅ Optional: Handle preflight explicitly (not required if app.use(cors(...)) is used)
 app.options('*', cors(corsOptions));
+
+app.use(cookieParser());
 app.use(express.json());
+
+// ✅ Register routes AFTER middlewares
 app.use(Route);
 app.use(userRouter);
 
-app.listen(5000, ()=> console.log('Server up and running....'));
+app.listen(5000, () => console.log('Server up and running....'));
