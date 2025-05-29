@@ -13,7 +13,7 @@ steps:
       [
         "run",
         "deploy",
-        "be",
+        "be-tgs7",
         "--image",
         "gcr.io/$PROJECT_ID/tcc-tgs7-be",
         "--set-env-vars=DB_HOST=$_DB_HOST,DB_USERNAME=$_DB_USERNAME,DB_PASSWORD=$_DB_PASSWORD,DB_NAME=$_DB_NAME,ACCESS_TOKEN_SECRET=$_ACCESS_TOKEN_SECRET,REFRESH_TOKEN_SECRET=$_REFRESH_TOKEN_SECRET",
